@@ -1,0 +1,64 @@
+﻿@model PharamcyApp.Models.Sell
+
+@{
+    ViewData["Title"] = "Details";
+   
+}
+
+
+
+<h1>Details</h1>
+
+<div>
+    <h4>Sell</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Pharmacy)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Pharmacy.PharmacyName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Medicine)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Medicine.MedicineName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.SellID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+@*<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Pharmacy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Medicine)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Pharmacy.PharmacyName)
+        {
+            foreach(var i in Model.Medicine.MedicineName)
+            {
+                count += 1;
+            }
+
+        }
+    </tbody>
+</table>*@
+
+@*<tfoot>
+    <tr>
+        <td><b>No of Medicines:</b>@count</td>
+    </tr>
+</tfoot>*@
+
+

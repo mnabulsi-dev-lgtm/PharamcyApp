@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+        <title>FMA</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link href="https://fonts.googleapis.com/css?family=Rubik:400,700|Crimson+Text:400,400i" rel="stylesheet">
+        <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+        <link rel="stylesheet" href="~/css/bootstrap.min.css">
+        <link rel="stylesheet" href="~/css/magnific-popup.css">
+        <link rel="stylesheet" href="~/css/jquery-ui.css">
+        <link rel="stylesheet" href="~/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
+
+
+        <link rel="stylesheet" href="~/css/aos.css">
+
+        <link rel="stylesheet" href="~/css/style.css">
+
+    </head>
+
+<body>
+    <header>
+        <div class="site-wrap">
+
+            <div class="site-navbar py-2">
+
+                <div class="search-wrap">
+                    <div class="container">
+                      
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div class="logo">
+                            <div class="site-logo">
+                                <a asp-controller="home" asp-action="index" class="js-logo-clone">FMA</a>
+                            </div>
+                        </div>
+                        <div class="main-nav d-none d-lg-block">
+
+                            <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                                <div  class="ui-icon-arrow-1-e">
+                                    
+                                </div>
+
+                                <nav class="site-navigation text-right text-md-center" role="navigation">
+
+                                    <ul class="site-menu js-clone-nav d-none d-lg-block">
+
+                                        <li class="active"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                                        <li><a asp-controller="Pharmacies" asp-action="Index">Pharmacies</a></li>
+                                        <li><a asp-controller="Medicines" asp-action="Index">Medicines</a></li>
+                                        <li><a asp-controller="Sells" asp-action="Index">Sells</a></li>
+                                        <li><a asp-controller="Pharmacies" asp-action="Search">Search</a></li>
+                                        <li><a asp-controller="Home" asp-action="privacy">Privacy</a></li>
+
+                                    </ul>
+
+                                </nav>
+                            </div>
+                            </div>
+                            
+                        <div >
+                            <partial name="_LoginPartial" />
+                        </div>
+                        </div>
+                </div>
+            </div>
+
+            <div class="site-blocks-cover" style="background-image: url('/images/hero_1.jpg');">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-7 mx-auto order-lg-2 align-self-center">
+                            <div class="site-block-cover-content text-center">
+                                <h2 class="sub-title" style="color:greenyellow"> <b>new Pharmacies, New Medicine Everyday</b></h2>
+                                <h1>Welcome To FMA</h1>
+                                <p>
+                                    <a asp-controller="Pharmacies" asp-action="Search" class="btn btn-primary px-5 py-3">Search Now</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="site-section">
+                <div class="container">
+                    <div class="row align-items-stretch section-overlap">
+                        <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+                            <div class="banner-wrap bg-primary h-100">
+                                <a href="#" class="h-100">
+                                    <h5>Free <br> Shipping</h5>
+                                    <p>
+                                        Coming Soon !
+                                        <strong>With FMA free shipping, do not Worry about your shipment!</strong>
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+                            <div class="banner-wrap h-100">
+                                <a href="#" class="h-100">
+                                    <h5>Season <br> Sale 50% Off</h5>
+                                    <p>
+                                        Coming Soon!
+                                        <strong>Buy it Cheap, Watch Them Weep.</strong>
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+                            <div class="banner-wrap bg-warning h-100">
+                                <a href="#" class="h-100">
+                                    <h5>Buy <br> A Gift Card</h5>
+                                    <p>
+                                        Coming Soon!
+                                        <strong>for Special customers only.</strong>
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+           
+        </div>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container">
+            
+            <div class="row pt-5 mt-5 text-center">
+                <div class="col-md-12">
+                    <p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;
+                        <script>document.write(new Date().getFullYear());</script> All rights reserved | FMA
+                    </p>
+                        <p>  Prepared by Mohamamd Nabulsi</p>
+                        
+                                                                                 
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                   
+                </div>
+
+            </div>
+        </div>
+    </footer>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/aos.js"></script>
+
+    <script src="js/main.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

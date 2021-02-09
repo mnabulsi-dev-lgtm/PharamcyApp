@@ -1,0 +1,64 @@
+﻿@model IEnumerable<PharamcyApp.Models.Medicine>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="alert alert-dismissible alert-warning">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <h4 class="alert-heading">These are all Available Medicines</h4>
+    <p class="mb-0">No Sorting or Filltering</p>
+</div>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MedicineName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeseaseType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.productionCon)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EXPDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MedicineName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DeseaseType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.productionCon)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EXPDate)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.MedicineID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.MedicineID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.MedicineID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

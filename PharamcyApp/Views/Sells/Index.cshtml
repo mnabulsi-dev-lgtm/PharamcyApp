@@ -1,0 +1,45 @@
+﻿@model IEnumerable<PharamcyApp.Models.Sell>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+    <div class="alert alert-dismissible alert-warning">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <h4 class="alert-heading">These are all Available sells in Amman City</h4>
+        <p class="mb-0">Filterd by Pharmacy location</p>
+    </div>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Pharmacy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Medicine)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pharmacy.PharmacyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Medicine.MedicineName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.SellID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.SellID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.SellID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

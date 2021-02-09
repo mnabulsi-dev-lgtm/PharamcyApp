@@ -1,0 +1,68 @@
+﻿@model PharamcyApp.Models.Pharmacy
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Pharmacy</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="PharmacyName" class="control-label"></label>
+                <input asp-for="PharmacyName" class="form-control" />
+                <span asp-validation-for="PharmacyName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PharmacyLocation" class="control-label"></label>
+                <select asp-for="PharmacyLocation" asp-items="@Html.GetEnumSelectList<Cities>()" class="form-control"></select>
+                <span asp-validation-for="PharmacyLocation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="phonenumber" class="control-label"></label>
+                <input asp-for="phonenumber" class="form-control" />
+                <span asp-validation-for="phonenumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="workhour" class="control-label"></label>
+                <select asp-for="workhour" asp-items="@Html.GetEnumSelectList<Status>()" class="form-control"></select>
+                <span asp-validation-for="workhour" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="email" class="control-label"></label>
+                <input asp-for="email" class="form-control" />
+                <span asp-validation-for="email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="emailConf" class="control-label"></label>
+                <input asp-for="emailConf" class="form-control" />
+                <span asp-validation-for="emailConf" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CoverImage" class="control-label"></label>
+                <input asp-for="CoverImage" class="form-control-file" type="file"/>
+                <span asp-validation-for="CoverImage" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+                <label asp-for="BackCoverImage" class="control-label"></label>
+                <input asp-for="BackCoverImage" class="form-control-file" type="file" />
+                <span asp-validation-for="BackCoverImage" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,59 @@
+﻿@model PharamcyApp.Models.Pharmacy
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Pharmacy</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="PharmacyID" />
+            <div class="form-group">
+                <label asp-for="PharmacyName" class="control-label"></label>
+                <input asp-for="PharmacyName" class="form-control" />
+                <span asp-validation-for="PharmacyName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PharmacyLocation" class="control-label"></label>
+                <select asp-for="PharmacyLocation" asp-items="@Html.GetEnumSelectList<Cities>()" class="form-control"></select>
+                <span asp-validation-for="PharmacyLocation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="phonenumber" class="control-label"></label>
+                <input asp-for="phonenumber" class="form-control" />
+                <span asp-validation-for="phonenumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="workhour" class="control-label"></label>
+                <select asp-for="workhour" asp-items="@Html.GetEnumSelectList<Status>()" class="form-control"></select>
+                <span asp-validation-for="workhour" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="email" class="control-label"></label>
+                <input asp-for="email" class="form-control" />
+                <span asp-validation-for="email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="emailConf" class="control-label"></label>
+                <input asp-for="emailConf" class="form-control" />
+                <span asp-validation-for="emailConf" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
